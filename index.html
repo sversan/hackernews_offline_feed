@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="sidebar">
+    <h2>🛠 System Updates</h2>
+    {% for update in updates %}
+        <div class="update">{{ update }}</div>
+    {% endfor %}
+</div>
+
+<div class="main-content">
+    <header>
+        <h1>🧠 Hacker News Offline Feed</h1>
+    </header>
+    <div class="news-container">
+        {% for article in news %}
+            <div class="news-card">
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.summary }}</p>
+                <a href="{{ article.url }}" target="_blank">Read More →</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
